@@ -55,7 +55,7 @@ public class ClientDaoImpl implements IClientDao {
 		c.setAdress(a);
 		em.persist(c);
 		return c;
-	}
+	}//kfhjfhf
 
 	@Override
 	public void addClientToVoiture(Long idVoiture, Long idClient) {
