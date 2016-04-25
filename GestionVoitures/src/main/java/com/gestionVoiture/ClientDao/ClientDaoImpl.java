@@ -14,7 +14,7 @@ public class ClientDaoImpl implements IClientDao {
 	@PersistenceContext
     private EntityManager em;
 	@Override
-	public Client addClient(Client c) {// lalala
+	public Client addClient(Client c) {// lalaladdddd
 		em.persist(c);
 		return c;
 	}
