@@ -10,6 +10,8 @@ import com.gestionVoiture.entities.Adress;
 import com.gestionVoiture.entities.Client;
 import com.gestionVoiture.entities.Voiture;
 
+/*commentairees*/
+/*commentaires   */
 public class ClientDaoImpl implements IClientDao {
 	@PersistenceContext
     private EntityManager em;
@@ -55,7 +57,7 @@ public class ClientDaoImpl implements IClientDao {
 		c.setAdress(a);
 		em.persist(c);
 		return c;
-	}//kfhjfhf
+	}//kfhjfhfsssssss
 
 	@Override
 	public void addClientToVoiture(Long idVoiture, Long idClient) {
