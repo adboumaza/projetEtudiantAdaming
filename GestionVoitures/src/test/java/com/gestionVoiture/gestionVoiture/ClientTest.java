@@ -15,7 +15,6 @@ import com.gestionVoiture.entities.Client;
 public class ClientTest {
 	
 	/* ajout commentaire test synchro arnaud */
-	/*test conflit valerian*/
     
 	private static ClassPathXmlApplicationContext context;
 	private static IclientMetier metierClient;
@@ -29,9 +28,12 @@ public class ClientTest {
 	public static void tearDownAfterClass() throws Exception {
 		context.close();
 	}
+	
+	/*test commentaire sabrina*/
 
 	@Test
 	public void testAddClientClient() {
+		/* test ajout client - arnaud */
 		Client c= new Client("Boumaza","adel",29);
 		metierClient.addClient(c);
 		assertNotNull(c.getIdClient());
@@ -39,6 +41,7 @@ public class ClientTest {
 
 	@Test
 	public void testUpdateClient() {
+		/* test update client - arnaud */
 		Client c=metierClient.getClient(1L);
 		c.setNomClient("nom modifier");
 		metierClient.updateClient(c);
@@ -47,6 +50,7 @@ public class ClientTest {
 
 	@Test
 	public void testDeleteClient() {
+		/*test com valerian*/
 		List<Client> tab1=metierClient.getClients();//2
 		metierClient.deleteClient(1L);
 		List<Client> tab2= metierClient.getClients();//1
