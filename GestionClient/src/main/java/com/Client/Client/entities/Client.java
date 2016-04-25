@@ -32,6 +32,9 @@ public class Client {
 	private String nomClient;
 	private String prenomClient;
 	private int age;
+	
+	/* Commentaire inséré par Lory.... */
+	
 	/************association*************************************/
 	@ManyToMany(fetch=FetchType.LAZY)
 	@JoinTable(name="Voiture_Client")
