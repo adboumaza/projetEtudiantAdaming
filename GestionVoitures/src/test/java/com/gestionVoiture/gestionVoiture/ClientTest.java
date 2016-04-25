@@ -13,6 +13,9 @@ import com.gestionVoiture.ClientMetier.IclientMetier;
 import com.gestionVoiture.entities.Client;
 
 public class ClientTest {
+	
+	/* ajout commentaire test synchro arnaud */
+	/*test conflit valerian*/
     
 	private static ClassPathXmlApplicationContext context;
 	private static IclientMetier metierClient;
