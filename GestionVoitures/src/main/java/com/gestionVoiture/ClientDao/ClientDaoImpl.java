@@ -10,8 +10,6 @@ import com.gestionVoiture.entities.Adress;
 import com.gestionVoiture.entities.Client;
 import com.gestionVoiture.entities.Voiture;
 
-/*commentairees*/
-/*commentaires   */
 public class ClientDaoImpl implements IClientDao {
 	@PersistenceContext
     private EntityManager em;
@@ -43,7 +41,8 @@ public class ClientDaoImpl implements IClientDao {
 		Query query=em.createQuery("from Client");
 		return query.getResultList();
 	}
-
+	
+	
 	@Override
 	public List<Client> getClientParMc(String mc) {
 		Query query=em.createQuery("from Client c where c.nomClient like :X");
@@ -57,7 +56,7 @@ public class ClientDaoImpl implements IClientDao {
 		c.setAdress(a);
 		em.persist(c);
 		return c;
-	}//kfhjfhfsssssss
+	}
 
 	@Override
 	public void addClientToVoiture(Long idVoiture, Long idClient) {
