@@ -1,4 +1,5 @@
 package com.Client.Client.controllers;
+// commit aghiles
 //commit aghiles
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -26,7 +27,8 @@ public class ClientControlers {
     	return "voiture";
     }
     
-    
+    /* je fais confiance à mes camarades de formation */
+    /* a tort */
     
 	
 }
