@@ -9,7 +9,7 @@ import javax.persistence.Query;
 import com.gestionVoiture.entities.Adress;
 import com.gestionVoiture.entities.Client;
 import com.gestionVoiture.entities.Voiture;
-
+/*commentaire*/
 public class ClientDaoImpl implements IClientDao {
 	@PersistenceContext
     private EntityManager em;
