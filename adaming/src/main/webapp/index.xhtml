@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:f="http://java.sun.com/jsf/core"
+     xmlns:h="http://java.sun.com/jsf/html"
+     xmlns:ui="http://java.sun.com/jsf/facelets"
+     xmlns:p="http://primefaces.org/ui">
+	
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+	<title>Index Of...</title>
+</h:head>
+
+<h:body>
+	<div class="container">
+		<h1><h:outputText value="Ajout d'un Etudiant" /></h1>
+		<br/><br/>
+		
+		<h:form id="form">
+			<p:accordionPanel style="width:600px;">
+				<p:tab title="Ajout d'un Etudiant">
+					<table>
+						<tr>
+							<td style="width:300px;padding-bottom:10px;"><h:outputText value="Nom :" /></td>
+							<td style="width:300px;padding-bottom:10px;"><p:inputText id="nom" value="#{student.nomStudent}" /></td>
+						</tr>
+						<tr>
+							<td style="width:300px;padding-bottom:10px;"><h:outputText value="Age :" /></td>
+							<td style="width:300px;padding-bottom:10px;"><p:inputText id="age" value="#{student.ageStudent}" /></td>
+						</tr>
+						<tr>
+							<td style="width:300px;padding-top:15px;">
+								<div align="center">
+									<p:commandButton value="Ajouter" actionListener="#{metierStudent.addStudent(student)}" update=":form:studentTable" ajax="true" />
+								</div>
+							</td>
+							<td style="width:300px;padding-top:15px;">
+								<div align="center">
+									<p:commandButton type="reset" value="Rétablir" />
+								</div>
+							</td>
+						</tr>
+					</table>
+				</p:tab>
+			</p:accordionPanel>
+			
+			<br/><br/><br/><br/>
+			<div align="center">
+				<p:dataTable id="studentTable" var="newStudent" value="#{metierStudent.getStudents()}" 
+							 paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {Exporters}"
+							 paginator="true" rows="10" style="width:910px;margin-bottom:20px;">
+			
+					<f:facet name="{Exporters}">
+						<p:commandLink ajax="false" style="float:right;">
+							<p:graphicImage name="images/xml.png" width="24" />
+							<p:dataExporter type="xml" target=":form:studentTable" fileName="students" />
+						</p:commandLink>
+						
+						<p:commandLink ajax="false" style="float:right;">
+							<p:graphicImage name="images/csv.png" width="24" />
+							<p:dataExporter type="csv" target=":form:studentTable" fileName="students" />
+						</p:commandLink>
+						
+						<p:commandLink ajax="false" style="float:right;">
+							<p:graphicImage name="images/pdf.png" width="24" />
+							<p:dataExporter type="pdf" target=":form:studentTable" fileName="students" />
+						</p:commandLink>
+						
+						<p:commandLink ajax="false" style="float:right;">
+							<p:graphicImage name="images/excel.png" width="24" />
+							<p:dataExporter type="xls" target=":form:studentTable" fileName="students" />
+						</p:commandLink>
+					</f:facet>
+					
+					<p:column style="width:50px;">
+						<f:facet name="header">
+							<h:outputText value="ID" />
+						</f:facet>
+						<h:outputText value="#{newStudent.idStudent}" />
+					</p:column>
+					
+					<p:column style="width:150px;">
+						<f:facet name="header">
+							<h:outputText value="NOM" />
+						</f:facet>
+						<h:outputText value="#{newStudent.nomStudent}" />
+					</p:column>
+					
+					<p:column style="width:150px;">
+						<f:facet name="header">
+							<h:outputText value="AGE" />
+						</f:facet>
+						<h:outputText value="#{newStudent.ageStudent}" />
+					</p:column>
+					
+				</p:dataTable>
+			</div>
+		</h:form>
+	</div>
+</h:body>
+
+</html>
